@@ -1,0 +1,15 @@
+<h1 class="h1 text-monospace">My tasks</h1>
+
+<ul class="list-group">
+  <% @tasks.each do |task| %>
+    <li class="list-group-item">
+      <input type="checkbox" name="completed" <%= 'checked' if task.completed %>>
+      <%= link_to task.title, task_path(task) %> -
+      <%= link_to "❎", task_path(task), method: :delete, data: {:confirm => "Remove this user ?"} %>
+    </li>
+  <% end %>
+</ul>
+
+<button type="button"  class="btn btn-light text-white">
+  <%= link_to "+ Add a new task",  new_path%>
+</button>

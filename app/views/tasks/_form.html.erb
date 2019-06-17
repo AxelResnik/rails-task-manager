@@ -1,0 +1,19 @@
+<div class="form-group">
+  <%= form_for @task do |t| %>
+  <%= t.label :title, "title" %>
+  <%= t.text_field :title %>
+</div>
+
+<div class="form-group">
+  <%= t.label :details, "details" %>
+  <%= t.text_field :details %>
+</div>
+
+<div class="form-chack">
+  <% if params[:action] == 'edit' %>
+  <%= t.label :completed, "Mark as completed" %>
+  <%= t.check_box :completed %>
+  <% end %>
+  <%= t.submit %>
+  <% end %>
+</div>

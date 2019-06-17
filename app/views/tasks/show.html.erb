@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-between">
+  <h1 class="h1 text-monospace"><%= @task.title %></h1>
+  <button class="btn btn-light rounded">
+    <%= link_to "Edit this task", edit_path(@task) %>
+  </button>
+</div>
+<div>
+  <h3 class="h3"><%= @task.details %></h3>
+</div>
+<div>
+  <input type="checkbox" name="completed" <%= 'checked' if @task.completed %>>
+  <%= @task.completed ? "This task is completed" : "This task is not completed yet" %>
+</div>
+
+<button type="button  class="btn btn-light text-white">
+  <%= link_to "Back to list", tasks_path %>
+</button>
